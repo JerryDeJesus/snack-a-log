@@ -1,1 +1,2 @@
-I got my driver license yesterday
+I got my driver's license yesterday.
+Another fun fact is I love Cinnabon.
