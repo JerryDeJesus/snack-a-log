@@ -1,6 +1,7 @@
 const express = require("express");
 const snacks = express.Router();
-const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = require('../queries/snacks');
+const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = require('../queries/snacks.js');
+const { uppercaseLetters } = require("../validations/checkUppercase.js");
 
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
@@ -37,7 +38,7 @@ snacks.get('/:id', async (req, res) => {
   }
 })
 
-snacks.post('/', async (req, res) => {
+snacks.post('/', uppercaseLetters, async (req, res) => {
   const { name, fiber, protein, added_sugar, is_healthy, image } = req.body;
   // if(!name || !fiber || !protein) possible validation step with if statement
 
