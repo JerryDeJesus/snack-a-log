@@ -5,9 +5,15 @@ const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = requir
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
   if(allSnacks[0]){
-    res.status(200).json(allSnacks);
+    res.status(200).json({
+      success: true,
+      payload: allSnacks
+    });
   }else{
-    res.status(500).json({ error: "server error"});
+    res.status(404).json({
+      success: false,
+      error: "server error"
+    });
   }
 });
 
@@ -16,9 +22,15 @@ snacks.get('/:id', async (req, res) => {
   try{
       const snack = await getSnack(id);
       if(snack.id){
-          res.status(200).json(snack);
+          res.status(200).json({
+            success: true,
+            payload: snack
+          });
       }else{
-          res.status(500).json({ error: "server-side error" })
+          res.status(404).json({ 
+            success: false,
+            error: "server error" 
+          })
       }
   } catch(err){
       console.log(err);
@@ -32,9 +44,15 @@ snacks.post('/', async (req, res) => {
   try{
       const createdSnack = await createSnack(req.body);
       if(createdSnack.id){
-          res.status(200).json(createdSnack);
+          res.status(200).json({
+            success: true, 
+            payload: createdSnack
+          });
       }else{
-          res.status(500).json({ error: "snack addition error" })
+          res.status(404).json({ 
+            success: false,
+            error: "snack addition error"
+           })
       }
   }catch(err){
       console.log(err);
@@ -46,9 +64,15 @@ snacks.post('/', async (req, res) => {
       const { id } = req.params;
       const deletedSnack = await deleteSnack(id);
       if(deletedSnack.id){
-          res.status(200).json(deletedSnack);
+          res.status(200).json({
+            success: true,
+            payload: deletedSnack
+          });
       }else{
-          res.status(404).json({ error: "snack not found"});
+          res.status(404).json({ 
+            success: false,
+            error: "snack not found"
+          });
       }
   })
 
@@ -57,9 +81,15 @@ snacks.post('/', async (req, res) => {
       const { body } = req;
       const updatedSnack = await updateSnack(id, body);
       if(updatedSnack.id){
-          res.status(200).json(updatedSnack);
+          res.status(200).json({
+            success: true,
+            payload: updatedSnack
+          });
       }else{
-          res.status(404).json({ error: "snack not found"});
+          res.status(404).json({ 
+            success: false,
+            error: "snack not found"
+          });
       }
   })
 
