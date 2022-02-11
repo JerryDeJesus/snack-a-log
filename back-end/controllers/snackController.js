@@ -12,7 +12,7 @@ snacks.get("/", async (req, res) => {
   }else{
     res.status(404).json({
       success: false,
-      error: "server error"
+      payload: "/not found/"
     });
   }
 });
@@ -29,7 +29,7 @@ snacks.get('/:id', async (req, res) => {
       }else{
           res.status(404).json({ 
             success: false,
-            error: "server error" 
+            payload: "/not found/"
           })
       }
   } catch(err){
@@ -51,7 +51,7 @@ snacks.post('/', async (req, res) => {
       }else{
           res.status(404).json({ 
             success: false,
-            error: "snack addition error"
+            payload: "snack addition error"
            })
       }
   }catch(err){
@@ -71,7 +71,7 @@ snacks.post('/', async (req, res) => {
       }else{
           res.status(404).json({ 
             success: false,
-            error: "snack not found"
+            payload: "snack not found"
           });
       }
   })
@@ -88,7 +88,7 @@ snacks.post('/', async (req, res) => {
       }else{
           res.status(404).json({ 
             success: false,
-            error: "snack not found"
+            payload: "snack not found"
           });
       }
   })
