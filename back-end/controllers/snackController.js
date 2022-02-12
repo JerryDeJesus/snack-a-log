@@ -1,7 +1,8 @@
 const express = require("express");
 const snacks = express.Router();
 const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = require('../queries/snacks.js');
-const { uppercaseLetters } = require("../validations/checkValidations.js");
+
+const { uppercaseLetters} = require("../validations/checkValidations.js");
 
 
 snacks.get("/", async (req, res) => {
@@ -41,13 +42,18 @@ snacks.get('/:id', async (req, res) => {
 
 snacks.post('/', uppercaseLetters, async (req, res) => {
   try{
-    const createdSnack = await createSnack(req.body);
+
+      const createdSnack = await createSnack(req.body);
+      if(!createdSnack.image) {
+        createdSnack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+      }
+
       if(createdSnack.id){
           res.status(200).json({
             success: true, 
             payload: createdSnack
           });
-      }else{
+      } else{
           res.status(404).json({ 
             success: false,
             payload: "snack addition error"
@@ -75,10 +81,15 @@ snacks.post('/', uppercaseLetters, async (req, res) => {
       }
   })
 
-  snacks.put('/:id', async (req, res) => {
+  snacks.put('/:id', uppercaseLetters, async (req, res) => {
       const { id } = req.params;
       const { body } = req;
       const updatedSnack = await updateSnack(id, body);
+
+      if(!updatedSnack.image) {
+        updatedSnack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+      }
+
       if(updatedSnack.id){
           res.status(200).json({
             success: true,

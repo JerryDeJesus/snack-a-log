@@ -11,7 +11,7 @@ const uppercaseLetters = (req, res, next) => {
     })
     req.body.name = splitStr.join(" ");
     next();
-}
+};
 
 module.exports = {
     uppercaseLetters
