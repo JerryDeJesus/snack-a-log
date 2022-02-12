@@ -1,7 +1,8 @@
 const express = require("express");
 const snacks = express.Router();
 const { getAllSnacks, getSnack, createSnack, deleteSnack, updateSnack } = require('../queries/snacks.js');
-const { uppercaseLetters } = require("../validations/checkUppercase.js");
+const { uppercaseLetters } = require("../validations/checkValidations.js");
+
 
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
@@ -39,11 +40,8 @@ snacks.get('/:id', async (req, res) => {
 })
 
 snacks.post('/', uppercaseLetters, async (req, res) => {
-  const { name, fiber, protein, added_sugar, is_healthy, image } = req.body;
-  // if(!name || !fiber || !protein) possible validation step with if statement
-
   try{
-      const createdSnack = await createSnack(req.body);
+    const createdSnack = await createSnack(req.body);
       if(createdSnack.id){
           res.status(200).json({
             success: true, 
@@ -55,10 +53,10 @@ snacks.post('/', uppercaseLetters, async (req, res) => {
             payload: "snack addition error"
            })
       }
+      
   }catch(err){
       console.log(err);
   }
-
 })
 
   snacks.delete('/:id', async (req, res) => {
