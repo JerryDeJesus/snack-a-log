@@ -43,10 +43,9 @@ snacks.post('/', uppercaseLetters, async (req, res) => {
   try{
       const createdSnack = await createSnack(req.body);
       confirmHealth(createdSnack);
-      if(!createdSnack.image) {
+      if(!createdSnack.image || createdSnack.image === "") {
         createdSnack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
       }
-
       if(createdSnack.id){
           res.status(200).json({
             success: true, 
@@ -85,7 +84,7 @@ snacks.post('/', uppercaseLetters, async (req, res) => {
       const { body } = req;
       const updatedSnack = await updateSnack(id, body);
       confirmHealth(updatedSnack);
-      if(!updatedSnack.image) {
+      if(!updatedSnack.image || updatedSnack.image === "") {
         updatedSnack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
       }
 
