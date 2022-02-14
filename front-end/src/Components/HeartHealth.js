@@ -1,9 +1,10 @@
 import heartSolid from "../assets/heart-solid.png";
 import heartOutline from "../assets/heart-regular.png";
 
-function HeartHealth({ snackHealth }) {
+function HeartHealth( snackHealth ) {
   const heartChange = () => {
-    console.log(snackHealth);
+    if(snackHealth) <img src = {heartSolid} alt = "healthy food" />
+    else <img src = {heartOutline} alt = "unhealthy food" />
   }
   return (
     <>
