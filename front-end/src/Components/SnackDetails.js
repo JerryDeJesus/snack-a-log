@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import heartHealth from "./HeartHealth.js";
+import HeartHealth from "./HeartHealth.js";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -26,14 +26,17 @@ function SnackDetails() {
 
     return(
         <article>
+            <aside>
+                <h4>the snack health</h4>
+                <HeartHealth />
+            </aside>
             <div>
                 <h5>{name}</h5>
                 <img src = {image} alt = {name} />
                 <h6>Protein: {protein}</h6>
                 <h6>Fiber: {fiber}</h6>
                 <h6>Added Sugar: {added_sugar}</h6>
-                <h4>Healthy? {is_healthy ? "True" : "False"}</h4>
-                <img src={heartHealth(is_healthy)} alt="heart_image" />
+                <img src={HeartHealth(is_healthy)} alt="heart_image" />
             </div>
             <div className="showNavigation">
                 <div><Link to = {"/snacks"}><button>Back</button></Link></div>

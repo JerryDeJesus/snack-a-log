@@ -53,7 +53,7 @@ function SnackNewForm() {
                     <label htmlFor = "image">Image</label>
                     <input id = "image" value = {image} type = "text" onChange = {handleText} />
                
-               
+                    
                 <button type="submit">Submit</button>
             </form>
         </div>
