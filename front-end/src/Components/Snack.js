@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import heartHealth from "./HeartHealth.js";
 
 function Snack({snack}) {
     let {name, fiber, protein, added_sugar, is_healthy, image, id} = snack;
@@ -9,7 +10,7 @@ function Snack({snack}) {
             <h4>Fiber: {fiber}</h4>
             <h4>Protein: {protein}</h4>
             <h4>Added Sugar: {added_sugar}</h4>
-            <h4>Healthy? {is_healthy ? "True" : "False"}</h4>
+            <img src={heartHealth(is_healthy)} alt="heart_image" />
             <button><Link to = {`/snacks/${id}`}>Details</Link></button>
         </div>
     )
