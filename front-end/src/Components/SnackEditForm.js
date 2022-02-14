@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import axios from "axios";
+import ToggleHeart from "./ToggleHeart";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -33,8 +34,12 @@ function SnackEditForm() {
              .then(res => navigate("/snacks"))
              .catch(err => console.log(err))
     };
+    
+    const handleHeartChange = () => {
+        setSnack({...snack, is_healthy: !snack.is_healthy});
+    };
 
-    let {name, fiber, protein, added_sugar, is_healthy, image} = snack;
+    let {name, fiber, protein, added_sugar, image} = snack;
 
     return(
         <div>
@@ -59,7 +64,8 @@ function SnackEditForm() {
                 
                     <label htmlFor = "image">Image</label>
                     <input id = "image" value = {image} type = "text" onChange = {handleText} />
-               
+
+                    <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} />
                
                 <button type="submit">Submit</button>
                 <button><Link to = {`/snacks/${id}`}>Back</Link></button>

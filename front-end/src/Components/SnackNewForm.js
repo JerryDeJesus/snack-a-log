@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ToggleHeart from "./ToggleHeart";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -27,33 +28,37 @@ function SnackNewForm() {
              .catch(err => console.log(err))
     };
 
-    let {name, fiber, protein, added_sugar, is_healthy, image} = snack;
+    const handleHeartChange = () => {
+        setSnack({...snack, is_healthy: !snack.is_healthy});
+    };
+
+    let {name, fiber, protein, added_sugar, image} = snack;
 
     return(
         <div>
             <h1>New Snacks</h1>
             <form onSubmit={handleSubmit}>
-                
-                    <label htmlFor = "name">Name</label>
-                    <input id = "name" value = {name} type = "text" onChange = {handleText} />
-               
-                
-                    <label htmlFor = "fiber">Fiber</label>
-                    <input id = "fiber" value = {fiber} type = "number" onChange = {handleText} />
-               
-                
-                    <label htmlFor = "protein">Protein</label>
-                    <input id = "protein" value = {protein} type = "number" onChange = {handleText} />
-               
+                <label htmlFor = "name">Name</label>
+                <input id = "name" value = {name} type = "text" onChange = {handleText} />
 
-                    <label htmlFor = "added_sugar">Added Sugar</label>
-                    <input id = "added_sugar" value = {added_sugar} type = "number" onChange = {handleText} />
-               
-                
-                    <label htmlFor = "image">Image</label>
-                    <input id = "image" value = {image} type = "text" onChange = {handleText} />
-               
-                    
+            
+                <label htmlFor = "fiber">Fiber</label>
+                <input id = "fiber" value = {fiber} type = "number" onChange = {handleText} />
+            
+            
+                <label htmlFor = "protein">Protein</label>
+                <input id = "protein" value = {protein} type = "number" onChange = {handleText} />
+            
+
+                <label htmlFor = "added_sugar">Added Sugar</label>
+                <input id = "added_sugar" value = {added_sugar} type = "number" onChange = {handleText} />
+            
+            
+                <label htmlFor = "image">Image</label>
+                <input id = "image" value = {image} type = "text" onChange = {handleText} />
+            
+                <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} />
+
                 <button type="submit">Submit</button>
             </form>
         </div>
