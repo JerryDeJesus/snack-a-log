@@ -21,6 +21,9 @@ const getSnack = async (id) => {
 
 const createSnack = async (snack) => {
    try{
+      if(!snack.image || snack.image === "") {
+         snack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+      }
       const newSnack = await db.one(
          "INSERT INTO snacks (name, fiber, protein, added_sugar, is_healthy, image) VALUES($1, $2, $3 ,$4, $5, $6) RETURNING *;",
          [snack.name, snack.fiber, snack.protein, snack.added_sugar, snack.is_healthy, snack.image]
@@ -42,6 +45,9 @@ const deleteSnack = async (id) => {
 
 const updateSnack = async (id, snack) => {
    try{
+      if(!snack.image || snack.image === "") {
+         snack.image = "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image";
+      }
       const updatedSnack = await db.one('UPDATE snacks SET name=$1, fiber=$2, protein=$3, added_sugar=$4, is_healthy=$5, image=$6 WHERE id=$7 RETURNING *;',
       [snack.name, snack.fiber, snack.protein, snack.added_sugar, snack.is_healthy, snack.image, id])
      return updatedSnack
