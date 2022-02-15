@@ -41,8 +41,8 @@ snacks.get('/:id', async (req, res) => {
 
 snacks.post('/', uppercaseLetters, async (req, res) => {
   try{
+      req.body.is_healthy = confirmHealth(req.body);
       const createdSnack = await createSnack(req.body);
-      confirmHealth(createdSnack);
       if(createdSnack.id){
           res.status(200).json({
             success: true, 
@@ -79,8 +79,8 @@ snacks.post('/', uppercaseLetters, async (req, res) => {
   snacks.put('/:id', uppercaseLetters, async (req, res) => {
       const { id } = req.params;
       const { body } = req;
+      body.is_healthy = confirmHealth(body);
       const updatedSnack = await updateSnack(id, body);
-      confirmHealth(updatedSnack);
       
       if(updatedSnack.id){
           res.status(200).json({

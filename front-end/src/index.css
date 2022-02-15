@@ -108,3 +108,25 @@ article .showNavigation {
 article .snack-card, .snack-details {
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 30px -20px rgba(0,0,0,0.2);
 }
+
+/* STYLING FORMS */
+#new-form, #edit-form {
+    display: flex;
+    justify-content: center;
+}
+
+.newform-heart, .editform-heart {
+    display: flex;
+    width: 150px;
+    margin: 15px;
+    padding-left: 50px;
+    align-items: center;
+}
+
+form {
+    display: grid;
+}
+
+input {
+    width: 250px;
+}
