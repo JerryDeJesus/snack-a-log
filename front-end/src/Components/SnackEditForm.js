@@ -65,7 +65,7 @@ function SnackEditForm() {
                     <label htmlFor = "image">Image</label>
                     <input id = "image" value = {image} type = "text" onChange = {handleText} />
 
-                    <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} />
+                    <div><ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} /></div>
                
                 <button type="submit">Submit</button>
                 <button><Link to = {`/snacks/${id}`}>Back</Link></button>

@@ -18,7 +18,6 @@ function Snacks() {
 
     return(
         <div>
-            <h1>Displaying All Snacks</h1>
             <section className="Snacks">
                 {displaySnacks}
             </section>

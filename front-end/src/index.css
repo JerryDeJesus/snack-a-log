@@ -7,6 +7,7 @@ body {
 
 h1 {
     font-family: "Carter One", cursive;
+    text-align: center;
 }
 
 main {
@@ -23,7 +24,7 @@ nav {
     align-items: center;
 }
 
-a {
+a, .btn-create-snack {
     text-decoration: none;
     color: rgb(235, 94, 40);
 }
@@ -43,15 +44,67 @@ h4 {
 }
 
 .Snack div {
-    background-color: rgb(255, 252, 242);
+    /* background-color: rgb(255, 252, 242); */
     width: 150px;
+    background-color: white;
 }
 
 .Snacks div {
     width: 150px;
     padding: 1em;
+    background-color: rgb(255, 252, 242);
 }
 
 .Snacks img {
     width: 150px;
+}
+
+/* PERSONAL CSS STYLE START */
+h4 .heart {
+    width: 25px;
+} */
+
+.snack-card span {
+    width: 25px;
+}
+
+article aside {
+    margin: 0 125px;
+}
+
+aside h4 {
+    text-align: center;
+}
+
+.heart-detail h4 {
+    width: 100px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 252, 242);
+    justify-content: space-evenly;   
+}
+
+article {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 252, 242);
+}
+
+article .Snack {
+    display: grid;
+    width: 300px;
+}
+
+article .showNavigation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+article .snack-card, .snack-details {
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 30px -20px rgba(0,0,0,0.2);
 }
