@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ToggleHeart from "./ToggleHeart";
+// import ToggleHeart from "./ToggleHeart";
+import HeartHealth from "./HeartHealth";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -28,16 +29,20 @@ function SnackNewForm() {
              .catch(err => console.log(err))
     };
 
-    const handleHeartChange = () => {
-        setSnack({...snack, is_healthy: !snack.is_healthy});
-    };
+    // const handleHeartChange = () => {
+    //     setSnack({...snack, is_healthy: !snack.is_healthy});
+    // };
 
-    let {name, fiber, protein, added_sugar, image} = snack;
+    let {name, fiber, protein, added_sugar, image, is_healthy} = snack;
 
     return(
-        <div>
-            <h1>New Snacks</h1>
+        <div id="new-form">
             <form onSubmit={handleSubmit}>
+                <div className="newform-heart">
+                    {/* <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} /> */}
+                    {HeartHealth(is_healthy)}
+                </div>
+                
                 <label htmlFor = "name">Name</label>
                 <input id = "name" value = {name} type = "text" onChange = {handleText} />
 
@@ -55,9 +60,7 @@ function SnackNewForm() {
             
             
                 <label htmlFor = "image">Image</label>
-                <input id = "image" value = {image} type = "text" onChange = {handleText} />
-            
-                <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} />
+                <input id = "image" value = {image} type = "text" onChange = {handleText} placeholder = "http://" />
 
                 <button type="submit">Submit</button>
             </form>

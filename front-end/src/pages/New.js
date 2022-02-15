@@ -3,7 +3,7 @@ import SnackNewForm from "../Components/SnackNewForm.js";
 function New() {
     return(
         <div>
-            <h1>New Snack Form</h1>
+            <h1>Snacks</h1>
             <SnackNewForm />
         </div>
     )
