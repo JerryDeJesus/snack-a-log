@@ -18,10 +18,9 @@ function Snacks() {
 
     return(
         <div>
-            <h1>Displaying All Snacks</h1>
-            <ul>
+            <section className="Snacks">
                 {displaySnacks}
-            </ul>
+            </section>
         </div>
     )
 }

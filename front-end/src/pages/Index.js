@@ -3,7 +3,7 @@ import Snacks from "../Components/Snacks.js";
 function Index() {
     return(
         <div>
-            <h2>Index</h2>
+            <h1>Your Snacks</h1>
             <Snacks />
         </div>
     )

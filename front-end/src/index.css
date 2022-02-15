@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Overlock&display=swap');
+
+body {
+    font-family: "Overlock", cursive;
+}
+
+h1 {
+    font-family: "Carter One", cursive;
+    text-align: center;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+nav {
+    background-color: rgb(37,36,34);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 45px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+a, .btn-create-snack {
+    text-decoration: none;
+    color: rgb(235, 94, 40);
+}
+
+h4 {
+    margin: 0px;
+    font-size: 16px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.Snacks article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.Snack div {
+    /* background-color: rgb(255, 252, 242); */
+    width: 150px;
+    background-color: white;
+}
+
+.Snacks div {
+    width: 150px;
+    padding: 1em;
+    background-color: rgb(255, 252, 242);
+}
+
+.Snacks img {
+    width: 150px;
+}
+
+/* PERSONAL CSS STYLE START */
+h4 .heart {
+    width: 25px;
+} */
+
+.snack-card span {
+    width: 25px;
+}
+
+article aside {
+    margin: 0 125px;
+}
+
+aside h4 {
+    text-align: center;
+}
+
+.heart-detail h4 {
+    width: 100px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(255, 252, 242);
+    justify-content: space-evenly;   
+}
+
+article {
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 252, 242);
+}
+
+article .Snack {
+    display: grid;
+    width: 300px;
+}
+
+article .showNavigation {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+article .snack-card, .snack-details {
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 30px -20px rgba(0,0,0,0.2);
+}
