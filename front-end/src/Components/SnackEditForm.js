@@ -35,23 +35,15 @@ function SnackEditForm() {
              .then(res => navigate("/snacks"))
              .catch(err => console.log(err))
     };
-    
-    // const handleHeartChange = () => {
-    //     setSnack({...snack, is_healthy: !snack.is_healthy});
-    // };
+
 
     let {name, fiber, protein, added_sugar, image, is_healthy} = snack;
-
-    const handleHeart = () => {
-        setSnack({...snack, is_healthy: is_healthy});
-    };
 
     return(
         <div id="edit-form">
             <form onSubmit={handleEdit}>
                 <div className="editform-heart">
-                    {/* <ToggleHeart snack = {snack} handleHeartChange = {handleHeartChange} /> */}
-                    <HeartHealth snackHealth = {is_healthy} handleHeart = {handleHeart} />
+                    <HeartHealth snackHealth = {is_healthy} />
                 </div>
 
                 <label htmlFor = "name">Name</label>

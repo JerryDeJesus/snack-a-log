@@ -16,8 +16,9 @@ function Snack({snack}) {
                     <h4>Added Sugar: {added_sugar}</h4>
                     <button><Link to = {`/snacks/${id}`}>Details</Link></button> */}
 
-                    <h4><img src = {image} alt = {name} /></h4>
+                    <h4><img src = {image} alt = {is_healthy ? 'healthy food' : 'unhealthy food'} /></h4>
                     <h4>{name}</h4>
+                    <h4>{is_healthy}</h4>
                     <span>{HeartHealth(is_healthy)}</span>
                 </div>
             </Link>
