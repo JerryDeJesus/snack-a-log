@@ -19,7 +19,7 @@ function Snack({snack}) {
                     <h4><img src = {image} alt = {is_healthy ? 'healthy food' : 'unhealthy food'} /></h4>
                     <h4>{name}</h4>
                     <h4>{is_healthy}</h4>
-                    <span>{HeartHealth(is_healthy)}</span>
+                    <span className="all-display-heart">{HeartHealth(is_healthy)}</span>
                 </div>
             </Link>
         </article>
