@@ -60,9 +60,13 @@ h4 {
 }
 
 /* PERSONAL CSS STYLE START */
-h4 .heart {
+.heart img {
+    width: 100px;
+}
+
+.all-display-heart h4 img {
     width: 25px;
-} */
+}
 
 .snack-card span {
     width: 25px;

@@ -35,7 +35,6 @@ function SnackDetails() {
                 <h5>{name}</h5>
                 <img src = {image} alt = {name} />
                 <br />
-                <h4>Health: {is_healthy ? 'true' : 'false'}</h4>
                 <h6>Protein: {protein}</h6>
                 <h6>Fiber: {fiber}</h6>
                 <h6>Added Sugar: {added_sugar}</h6>
