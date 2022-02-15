@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Overlock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Overlock&display=swap');
+
+body {
+    font-family: "Overlock", cursive;
+}
+
+h1 {
+    font-family: "Carter One", cursive;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+nav {
+    background-color: rgb(37,36,34);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 45px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(235, 94, 40);
+}
+
+h4 {
+    margin: 0px;
+    font-size: 16px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.Snacks article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.Snack div {
+    background-color: rgb(255, 252, 242);
+    width: 150px;
+}
+
+.Snacks div {
+    width: 150px;
+    padding: 1em;
+}
+
+.Snacks img {
+    width: 150px;
+}
