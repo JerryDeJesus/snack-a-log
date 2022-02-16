@@ -50,7 +50,7 @@ describe("The New page", () => {
       cy.visit("http://localhost:3000/snacks");
       cy.contains("Potato Chips")
         .children()
-        .eq(1)
+        .eq(-1)
         .children()
         .children()
         .should("have.attr", "alt", "unhealthy food");

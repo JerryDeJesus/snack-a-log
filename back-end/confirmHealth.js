@@ -1,5 +1,8 @@
 const confirmHealth = (snack) => {
     let { protein, fiber, added_sugar, is_healthy } = snack;
+    protein = Number(protein);
+    fiber = Number(fiber);
+    added_sugar = Number(added_sugar);
     
   if(fiber >= 5 && added_sugar < 5){
       is_healthy = true
