@@ -1,5 +1,5 @@
 # Snack-A-Log Pair Programming Lab
-Frontend: npl-jd-snack-a-log.netlify.app
+Frontend: https://npl-jd-snack-a-log.netlify.app
 
 Backend: https://npl-jd-snack-a-log-be.herokuapp.com
 
