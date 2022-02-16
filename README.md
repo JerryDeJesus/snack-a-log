@@ -1,6 +1,8 @@
 # Snack-A-Log Pair Programming Lab
 Frontend: npl-jd-snack-a-log.netlify.app
+
 Backend: https://npl-jd-snack-a-log-be.herokuapp.com
+
 ## Overview
 
 In this lab activity, you will practice collaborating on a project. You'll be building an app to track snacks and whether or not they are healthy.
